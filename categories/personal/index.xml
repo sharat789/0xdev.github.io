@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal on 0x Dev Blog</title>
+    <link>https://0xdev.github.io/categories/personal/</link>
+    <description>Recent content in Personal on 0x Dev Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>sharat.nair157@gmail.com (Sharat Nair)</managingEditor>
+    <webMaster>sharat.nair157@gmail.com (Sharat Nair)</webMaster>
+    <lastBuildDate>Wed, 27 Aug 2025 08:24:31 +0200</lastBuildDate>
+    <atom:link href="https://0xdev.github.io/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://0xdev.github.io/posts/hello-world/</link>
+      <pubDate>Wed, 27 Aug 2025 08:24:31 +0200</pubDate><author>sharat.nair157@gmail.com (Sharat Nair)</author>
+      <guid>https://0xdev.github.io/posts/hello-world/</guid>
+      <description>&lt;h2 id=&#34;how-i-got-here&#34;&gt;How I Got Here&lt;/h2&gt;&#xA;&lt;p&gt;I got into the micro-blogging space 2 years ago when I first started my job as a Frontend Platform Engineer. It all began when I noticed my colleague casually browsing &#xA;&lt;a href=&#34;https://news.ycombinator.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hacker News&lt;/a&gt;&#xA; while sipping his morning coffee—which quickly became my ritual too.&lt;/p&gt;&#xA;&lt;p&gt;I was impressed by how everyday developers had their own blog websites where they shared knowledge and experience with the world, often with a tinge of humor and sarcasm that made technical content a very nice addition to your daily monotonous task of asking people to rebase their PR when shit doesn&amp;rsquo;t work.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
