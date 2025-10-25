@@ -1,0 +1,38 @@
+baseURL = 'https://0xdeveloper.netlify.app/'
+languageCode = 'en-us'
+title = '0x Dev Blog'
+
+theme = "hugo-theme-nightfall"
+
+[[menu.header]]
+name = "posts"
+weight = 0
+url = "/posts/"
+[[menu.header]]
+name = "about"
+weight = 1
+url = "/about/"
+
+[params]
+user = "sharat"
+hostname = "0xdev"
+openLinksInNewTab = true
+displayDateFormat = "2006-01-02"
+
+[params.author]
+name = "Sharat Nair"
+email = "sharat.nair157@gmail.com"
+
+[[params.social]]
+key = 0
+name = "github"
+url = "https://github.com/sharat789"
+target = "_blank"
+aria = "GitHub Profile"
+
+[[params.social]]
+key = 0
+name = "linkedin"
+url = "https://www.linkedin.com/in/sharat-nair-879212226/"
+target = "_blank"
+aria = "Linkedin Profile"
