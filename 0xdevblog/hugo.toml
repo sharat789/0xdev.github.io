@@ -2,7 +2,7 @@ baseURL = 'https://0xdeveloper.netlify.app/'
 languageCode = 'en-us'
 title = '0x Dev Blog'
 
-theme = "hugo-theme-nightfall"
+theme = "nightfall"
 
 [[menu.header]]
 name = "posts"
