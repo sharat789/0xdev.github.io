@@ -1,1 +1,10 @@
-<footer class="footer"></footer>
+<footer class="footer">
+    <div class="footer-terminal">
+        <a href="/"><span class="prompt">$</span> cd ~</a>
+        <a href="/posts/"><span class="prompt">$</span> cd /posts</a>
+        <a href="/about/"><span class="prompt">$</span> cd /about</a>
+    </div>
+    <div class="footer-copyright">
+        © {{ now.Format "2006" }} {{ .Site.Params.author.name }}
+    </div>
+</footer>

@@ -18,6 +18,7 @@ user = "sharat"
 hostname = "0xdev"
 openLinksInNewTab = true
 displayDateFormat = "2006-01-02"
+tagline = "Why be 10x when you can be 0x."
 
 [params.author]
 name = "Sharat Nair"

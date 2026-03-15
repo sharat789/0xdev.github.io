@@ -1,0 +1,123 @@
+{{ define "title"}}
+{{ .Title }} | {{ .Site.Params.author.name }}
+{{ end }}
+
+{{ define "main" }}
+<div class="postWrapper">
+    <h1>{{ .Title }}</h1>
+    {{ if .Description}}
+    	<p>{{.Description}}</p>
+    {{ end }}
+
+    {{ $showMetadata := true }}
+    {{ if eq .Site.Params.showMetadata false }}{{ $showMetadata = false }}{{ end }}
+    {{ if eq .Params.showMetadata false }}{{ $showMetadata = false }}{{ end }}
+
+    {{ $showPublished := true }}
+    {{ if eq .Site.Params.showPublishedDate false }}{{ $showPublished = false }}{{ end }}
+    {{ if eq .Site.Params.published false }}{{ $showPublished = false }}{{ end }}
+    {{ if eq .Params.showPublishedDate false }}{{ $showPublished = false }}{{ end }}
+
+    {{ $showReadingTime := true }}
+    {{ if eq .Site.Params.showReadingTime false }}{{ $showReadingTime = false }}{{ end }}
+    {{ if eq .Site.Params.readingTime false }}{{ $showReadingTime = false }}{{ end }}
+    {{ if eq .Params.showReadingTime false }}{{ $showReadingTime = false }}{{ end }}
+
+    {{ $showTags := true }}
+    {{ if eq .Site.Params.showTags false }}{{ $showTags = false }}{{ end }}
+    {{ if eq .Params.showTags false }}{{ $showTags = false }}{{ end }}
+
+    {{ $showAuthors := true }}
+    {{ if eq .Site.Params.showAuthors false }}{{ $showAuthors = false }}{{ end }}
+    {{ if eq .Params.showAuthors false }}{{ $showAuthors = false }}{{ end }}
+
+    {{ $showCategories := true }}
+    {{ if eq .Site.Params.showCategories false }}{{ $showCategories = false }}{{ end }}
+    {{ if eq .Params.showCategories false }}{{ $showCategories = false }}{{ end }}
+
+    {{ if $showMetadata }}
+    <section class="postMetadata">
+        <dl>
+            {{ if and $showTags (.GetTerms "tags") }}
+                {{ partial "taxonomy/tags" (.GetTerms "tags") }}
+            {{ end }}
+            {{ if and $showAuthors (.GetTerms "authors") }}
+                {{ partial "taxonomy/authors" (.GetTerms "authors") }}
+            {{ end }}
+            {{ if and $showCategories (.GetTerms "categories") }}
+                {{ partial "taxonomy/categories" (.GetTerms "categories") }}
+            {{ end }}
+            {{ if $showPublished }}
+                <dt>{{ i18n "published" }}</dt>
+                 {{ $layout := .Site.Params.displayDateFormat | default "2006-01-02" }}
+                 {{ $iso := .Date | time.Format "2006-01-02" }}
+                <dd><time datetime="{{ $iso }}">{{ .Date | time.Format $layout }}</time></dd>
+            {{ end }}
+            {{ if $showReadingTime }}
+                <dt>{{ i18n "reading_time" }}</dt>
+                <dd>{{ i18n "reading_time_desc" .ReadingTime }}</dd>
+            {{ end }}
+        </dl>
+    </section>
+    {{ end }}
+    
+    <nav class="breadcrumb">
+        <a href="/">~</a><span class="sep">/</span><a href="/posts/">posts</a><span class="sep">/</span><span class="current">{{ .Title }}</span>
+    </nav>
+
+    {{ $hasTOC := and (gt .WordCount 400) (.TableOfContents) }}
+    <div class="{{ if $hasTOC }}post-with-toc{{ end }}">
+    {{ if $hasTOC }}
+    <nav class="toc">
+        <h2>~/toc</h2>
+        {{ .TableOfContents }}
+    </nav>
+    {{ end }}
+
+    <article class="postContent">
+        {{ .Content }}
+    </article>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.postContent pre').forEach(function(pre) {
+        var code = pre.querySelector('code');
+        var lang = '';
+        if (code && code.className) {
+            var match = code.className.match(/language-(\w+)/);
+            if (match) lang = match[1];
+        }
+        
+        var header = document.createElement('div');
+        header.className = 'code-header';
+        header.innerHTML = 
+            '<div class="terminal-dots"><span></span><span></span><span></span></div>' +
+            '<span class="code-lang">' + lang + '</span>' +
+            '<button class="copy-btn">Copy</button>';
+        
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-wrapper';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(header);
+        wrapper.appendChild(pre);
+    });
+
+    document.querySelectorAll('.copy-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var code = this.closest('.code-wrapper').querySelector('code');
+            var text = code.textContent || code.innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    });
+});
+</script>
+{{ end }}

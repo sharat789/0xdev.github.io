@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    <title>
+        {{ i18n "home" }} | {{ .Site.Params.author.name }}
+    </title>
+
+    {{ partial "head" . }}
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        {{ partial "header" . }}
+
+        <div class="content vertical">
+            <main class="main">
+                <div class="indexWrapper">
+                    {{ if .Site.Params.author.avatarFirst }}
+                        {{ partial "avatar" . }}
+                    {{ end }}
+                    <div>
+                        <h1 class="indexHeader">{{ .Site.Params.author.name }}</h1>
+                        {{ if .Site.Params.tagline }}
+                        <p class="typewriter">
+                            <span class="typewriter-text"></span><span class="cursor">|</span>
+                        </p>
+                        {{ end }}
+                    </div>
+                    {{ if not .Site.Params.author.avatarFirst }}
+                        {{ partial "avatar" . }}
+                    {{ end }}
+                </div>
+
+                <section class="latest-posts">
+                    <h2>~/latest-posts</h2>
+                    {{ range first 2 (where .Site.RegularPages "Type" "posts") }}
+                    <div class="post-item">
+                        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                        <div class="post-meta">
+                            {{ .Date.Format "2006-01-02" }} · {{ .ReadingTime }} min read
+                        </div>
+                        {{ if .Description }}
+                        <p class="post-excerpt">{{ .Description }}</p>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </section>
+            </main>
+        </div>
+
+
+        {{ partial "footer" . }}
+    </div>
+
+    {{ if .Site.Params.tagline }}
+    <script>
+        (function() {
+            const text = "{{ .Site.Params.tagline }}";
+            const el = document.querySelector('.typewriter-text');
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 80);
+                }
+            }
+            if (el) type();
+        })();
+    </script>
+    {{ end }}
+
+</body>
+
+</html>
