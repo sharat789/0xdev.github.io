@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>
+The Omarchy (Dual Boot) Experience | Sharat Nair
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="This took way longer than I expected.">
+
+<meta property="og:title" content="The Omarchy (Dual Boot) Experience">
+<meta property="og:description" content="This took way longer than I expected.">
+<meta property="og:url" content="https://0xdeveloper.netlify.app/posts/omarchy-experience/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="0x Dev Blog">
+
+<meta property="article:author" content="Sharat Nair">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Omarchy (Dual Boot) Experience">
+<meta name="twitter:description" content="This took way longer than I expected.">
+
+<meta name="generator" content="Hugo 0.159.1">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+
+
+
+
+<link href="/css/style.min.66302fa6c122ab7804faa4bd6465554ac4d746c25294af622826d0445b79ab94.css" rel="stylesheet">
+
+<style>
+:root {
+    --color-primary: #6699cc;
+    --color-text: #f8f8ff;
+    --color-bg-dark: #292a2d;
+    --color-bg-darker: #252627;
+    --color-muted: #666;
+    --color-border: #444;
+    --font-mono: 'Fira Mono', monospace;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+.typewriter {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    min-height: 1.5em;
+}
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.postContent {
+    max-width: 90ch;
+    margin: 0 auto;
+    text-align: left;
+}
+.postContent p,
+.postContent li {
+    line-height: 1.7;
+}
+.breadcrumb {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
+}
+.breadcrumb a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+.breadcrumb .sep {
+    margin: 0 0.3rem;
+    color: var(--color-muted);
+}
+.breadcrumb .current {
+    color: var(--color-text);
+}
+.headerLinks .social-links {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-left: 1rem;
+}
+.headerLinks {
+    display: flex;
+    align-items: center;
+}
+.headerLinks ul {
+    display: flex;
+    align-items: center;
+}
+.headerLinks .social-links a {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+}
+.headerLinks .social-links a:hover {
+    color: var(--color-text);
+}
+.latest-posts {
+    margin-top: 3rem;
+    text-align: left;
+    width: 100%;
+    max-width: 90ch;
+}
+.main {
+    width: 100% !important;
+    max-width: 1000px !important;
+}
+.latest-posts h2 {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+.latest-posts .post-item {
+    margin-bottom: 1.5rem;
+}
+.latest-posts .post-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+.latest-posts .post-item h3 a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+.latest-posts .post-item h3 a:hover {
+    color: var(--color-primary);
+}
+.latest-posts .post-item .post-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+.latest-posts .post-item .post-excerpt {
+    margin-top: 0.5rem;
+    color: #aaa;
+}
+.toc {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--color-bg-darker);
+    border-left: 2px solid var(--color-primary);
+}
+.toc h2 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin: 0 0 1rem 0;
+}
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.toc ul ul {
+    padding-left: 1rem;
+}
+.toc li {
+    margin: 0.3rem 0;
+}
+.toc a {
+    color: #aaa;
+    text-decoration: none;
+}
+.toc a:hover {
+    color: var(--color-primary);
+}
+
+ 
+.postContent h1 {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    color: var(--color-text);
+}
+.postContent h2 {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--color-text);
+    border-bottom: 1px dotted var(--color-border);
+    padding-bottom: 0.5rem;
+}
+.postContent h3 {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    margin: 2rem 0 0.75rem;
+    color: var(--color-text);
+}
+.postContent h4, 
+.postContent h5, 
+.postContent h6 {
+    font-family: var(--font-mono);
+    color: var(--color-text);
+    margin: 1.5rem 0 0.5rem;
+}
+
+ 
+.postContent blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-bg-darker);
+    font-style: italic;
+    color: #ccc;
+}
+.postContent blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+ 
+.postContent figure {
+    margin: 2rem 0;
+}
+.postContent figure img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+.postContent figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #888;
+    text-align: center;
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px dotted var(--color-border);
+}
+
+ 
+.postContent pre {
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #272822;
+}
+.postContent code {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+.postContent p code,
+.postContent li code {
+    background: var(--color-bg-darker);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    color: #f92672;
+}
+
+ 
+.chroma { color: #f8f8f8; background: #272822; }
+.chroma .x { color: #f92672; }
+.chroma .p { color: #a6e22e; }
+.chroma .o { color: #f92672; }
+.chroma .c { color: #75715e; }
+.chroma .cp { color: #66d9ef; }
+.chroma .c1 { color: #75715e; }
+.chroma .cs { color: #75715e; }
+.chroma .gs { color: #a6e22e; font-weight: bold; }
+.chroma .kc { color: #ae81ff; }
+.chroma .kd { color: #a6e22e; }
+.chroma .kn { color: #f92672; }
+.chroma .kp { color: #66d9ef; }
+.chroma .kr { color: #66d9ef; }
+.chroma .kt { color: #66d9ef; }
+.chroma .m { color: #ae81ff; }
+.chroma .s { color: #e6db74; }
+.chroma .na { color: #a6e22e; }
+.chroma .nb { color: #f8f8f2; }
+.chroma .nc { color: #a6e22e; }
+.chroma .no { color: #66d9ef; }
+.chroma .nd { color: #66d9ef; }
+.chroma .ni { color: #f8f8f2; }
+.chroma .ne { color: #a6e22e; }
+.chroma .nf { color: #a6e22e; }
+.chroma .nl { color: #f8f8f2; }
+.chroma .nn { color: #f8f8f2; }
+.chroma .nx { color: #a6e22e; }
+.chroma .py { color: #f8f8f2; }
+.chroma .nt { color: #f92672; }
+.chroma .nv { color: #f8f8f2; }
+.chroma .ow { color: #f92672; }
+.chroma .w { color: #f8f8f2; }
+.chroma .mb { color: #ae81ff; }
+.chroma .mf { color: #ae81ff; }
+.chroma .mh { color: #ae81ff; }
+.chroma .mi { color: #ae81ff; }
+.chroma .mo { color: #ae81ff; }
+.chroma .sa { color: #e6db74; }
+.chroma .sb { color: #e6db74; }
+.chroma .sc { color: #e6db74; }
+.chroma .dl { color: #e6db74; }
+.chroma .sd { color: #e6db74; }
+.chroma .s2 { color: #e6db74; }
+.chroma .se { color: #ae81ff; }
+.chroma .sh { color: #e6db74; }
+.chroma .si { color: #e6db74; }
+.chroma .sr { color: #e6db74; }
+.chroma .s1 { color: #e6db74; }
+.chroma .ss { color: #e6db74; }
+.chroma .bp { color: #f8f8f2; }
+.chroma .fm { color: #a6e22e; }
+.chroma .vc { color: #f8f8f2; }
+.chroma .vg { color: #f8f8f2; }
+.chroma .vi { color: #f8f8f2; }
+.chroma .vm { color: #f8f8f2; }
+.chroma .l { color: #ae81ff; }
+.chroma .ld { color: #e6db74; }
+.chroma .s { color: #e6db74; }
+.chroma .an { color: #f92672; }
+.chroma .cn { color: #ae81ff; }
+.chroma .cm { color: #75715e; }
+.chroma .gh { color: #f8f8f2; font-weight: bold; }
+.chroma .gi { color: #a6e22e; }
+.chroma .gd { color: #f92672; }
+.chroma .ge { color: #a6e22e; font-style: italic; }
+.chroma .gr { color: #f92672; }
+.chroma .gt { color: #f92672; }
+.chroma .gl { color: #75715e; }
+
+ 
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e1f1c;
+    padding: 0.5rem 1rem;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid #3e3d32;
+}
+.code-header .terminal-dots {
+    display: flex;
+    gap: 6px;
+}
+.code-header .terminal-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.code-header .terminal-dots span:nth-child(1) { background: #ff5f56; }
+.code-header .terminal-dots span:nth-child(2) { background: #ffbd2e; }
+.code-header .terminal-dots span:nth-child(3) { background: #27c93f; }
+.code-header .code-lang {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+}
+.copy-btn {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: #3e3d32;
+    border: none;
+    color: #aaa;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.copy-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+.copy-btn.copied {
+    background: #27c93f;
+    color: #fff;
+}
+.postContent pre {
+    margin-top: 0;
+    border-radius: 0 6px 6px 6px;
+}
+
+ 
+@media (min-width: 1200px) {
+    .post-with-toc {
+        display: flex;
+        gap: 2rem;
+    }
+    .post-with-toc .toc {
+        position: sticky;
+        top: 2rem;
+        width: 200px;
+        flex-shrink: 0;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+        align-self: flex-start;
+    }
+    .post-with-toc .postContent {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+ 
+.footer-terminal {
+    font-family: var(--font-mono);
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.footer-terminal a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-terminal a:hover {
+    color: var(--color-text);
+}
+.footer-terminal .prompt {
+    color: #27c93f;
+    margin-right: 0.3rem;
+}
+.footer-copyright {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    text-align: center;
+}
+.footer {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+</style>
+
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a class="terminal" href="/">
+                <span>sharat@0xdev ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="/about/" title="" >
+                        ~/about</a>
+                </li>
+                
+                <li>
+                    <a href="/posts/" title="" >
+                        ~/posts</a>
+                </li>
+                
+            </ul>
+            
+            <div class="social-links">
+                
+                <a href="https://github.com/sharat789" target="_blank" aria-label="GitHub Profile" title="github">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        
+                    </svg>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/sharat-nair-879212226/" target="_blank" aria-label="Linkedin Profile" title="linkedin">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        
+                    </svg>
+                </a>
+                
+                <a href="/index.xml" target="_blank" aria-label="RSS Feed" title="RSS">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
+                    </svg>
+                </a>
+            </div>
+            
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>The Omarchy (Dual Boot) Experience</h1>
+    
+    	<p>This took way longer than I expected.</p>
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    <nav class="breadcrumb">
+        <a href="/">~</a><span class="sep">/</span><a href="/posts/">posts</a><span class="sep">/</span><span class="current">The Omarchy (Dual Boot) Experience</span>
+    </nav>
+
+    
+    <div class="post-with-toc">
+    
+    <nav class="toc">
+        <h2>~/toc</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#history">History</a></li>
+    <li><a href="#dhh-launches-omarchy">DHH launches Omarchy</a></li>
+    <li><a href="#installing-arch-with-encryption-on-a-partition">Installing Arch with Encryption on a partition</a></li>
+    <li><a href="#my-takeaways">My Takeaways</a>
+      <ul>
+        <li><a href="#yays">Yays</a></li>
+        <li><a href="#nays">Nays</a></li>
+      </ul>
+    </li>
+    <li><a href="#bonus-stuff">Bonus stuff</a></li>
+    <li><a href="#resouces">Resouces</a></li>
+  </ul>
+</nav>
+    </nav>
+    
+
+    <article class="postContent">
+        <h1 id="history">History</h1>
+<p>Linux always felt daunting as a teenager since at the surface it looked like something only tech professionals could handle. But this changed quite a bit over the years as more people wanted to transition to an OS that doesn&rsquo;t throw bloatware at you which obviously made your system slower and offered quite limited possibility to customize how the OS looked and felt like. But I needed to buy a laptop and my YouTube algorithm generously recommended videos about owning an old ThinkPad and using Linux to get the most juice out of the system. So I caved and bought a used ThinkPad T440S for 75 euros. This was the start of the my Linux journey.</p>
+<p>I installed Fedora linux as my first OS. I liked the minimal Gnome desktop environment that came as default and liked from a utilitarian perspective. But then I found the holy grail of linux customization 
+<a href="https://www.reddit.com/r/unixporn" target="_blank" rel="noopener">r/unixporn</a>
+ where people flaunted their linux setups with anime waifus and insane windows managers and terminals. Most of them were Arch Linux with Hyprland and this leads to the rabbit hole of me wanting to recreate this setup on my own.</p>
+<p>This was tough, installing Arch Linux seemed like a magnanimous task, but by the time I picked it up their arch install script made it much easier. But still the idea of scouring the internet for Hyprland documnetation, Waybar config seemed like too much of a work and I just forgot and went back to using Windows and MacOS like the average ignorant consumer I am.</p>
+<h1 id="dhh-launches-omarchy">DHH launches Omarchy</h1>
+<p>My colleague shows me this new project by 
+<a href="https://dhh.dk/" target="_blank" rel="noopener">DHH</a>
+ (the guy who made Ruby on Rails) called 
+<a href="https://omarchy.org" target="_blank" rel="noopener">Omarchy</a>
+. which as the title suggests was an aesthetic, modern, OPIONIONATED version of Arch Linux, basically a bunch of config loaded for the user at the start. This felt like something tailored for me.</p>
+<p>So I instantly installed it on my ThinkPad and boy was it easy to install, the ISO provides you a simple menu and does most of the stuff for you. The OS boots up with an aesthetic background and has all of it&rsquo;s tools at handy. I liked it so much that I decided to dual boot Omarchy on my gaming/home PC which has much better specs than the ThinkPad and I could essentially use it as a daily driver for personal development. The rest of the post can be treated as a walkthrough for dual booting Omarchy on a partition as I struggled a bit to find a singular source that explained the process.</p>
+<h1 id="installing-arch-with-encryption-on-a-partition">Installing Arch with Encryption on a partition</h1>
+<p>Omarchy ISO doesn&rsquo;t have any option to install it on a partition as it basically takes the whole drive and encrypts it, essentially wiping the drive. But the 
+<a href="https://learn.omacom.io/2/the-omarchy-manual/96/manual-installation" target="_blank" rel="noopener">docs</a>
+ mentioned the option to install Arch with specific settings and running the bash install script later if you wanted to install it on a partition (optionionated indeed).</p>
+<p>I set apart a 110G partition on my SSD which housed Windows, and started the process. I thought it wouldn&rsquo;t even be possible to encrypt a partition but apparently it is with some grunt work.</p>
+<ol>
+<li>Using the <code>cfdisk</code> command create your partitions for <code>boot</code> and the rest of your storage in your unallocated partition. It&rsquo;s pretty common to allocate around 512M in different guides and videos for your <code>boot</code> but if you take anything from this guide, it should be to allocate a much higher number (around 2G) for it since the install script instead of clearing the boot, installs Limine bootloader again which would fail if it runs out of space and you would have to start the whole process again. Maybe there is a way to increase the size of the partition at that point but it seemed tricky and dangerous.</li>
+<li><code>lsblk</code> would be your go-to command to check the drive status and to view your partitions and their properties. Then as mentioned in the guide, format the boot with ext4 and the home storage with <code>btrfs</code>. Once this is done, you should be able to encrypt the partition with Luks and the process is quite straightforward, I will provide a helpful YouTube video to follow along to.</li>
+<li>Once you have done everything else, comes the fun part of installing the Limine Bootloader, essentially copying the EFI from your installed directory to your boot directory and writing your basic config in <code>limine.conf</code> file. This can be basically copied from the Arch Wiki, main step being to paste the UUID of your encrypted partition in your limine config file.</li>
+</ol>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">timeout: 5
+
+/Arch Linux
+    protocol: linux
+    path: boot():/vmlinuz-linux
+    cmdline: root=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx rw
+    module_path: boot():/initramfs-linux.img
+</code></pre><p>The UUID could be put directly to the file by using this command <code>blkid -o value -s UUID /dev/&lt;your-encrypted-disk&gt; &gt;&gt; /boot/limine.conf</code> and then replacing the placeholder with UUID and voila you&rsquo;re set with the bootloader. Now you can either install the other applications/packages mentioned in the manual now or later, since it&rsquo;s just a pacman command which shouldn&rsquo;t hinder your install process.</p>
+<ol start="4">
+<li>Run reboot and wish for the best that you didn&rsquo;t mess anything up, you should be greeted with the limine screen with an entry for Arch Linux and if you get in with no errors, you&rsquo;re good to go ahead and run the install script as mentioned in the Omarchy docs.</li>
+</ol>
+<p>And voila! you have successfully installed Omarchy on a partition alongside another OS.</p>
+<p><img src="/assets/omarchy.gif" alt="The view"></p>
+<h1 id="my-takeaways">My Takeaways</h1>
+<p>This might seem like a simple process but took me quite a few times of installing arch from scratch and failing. But given the effort I really love what Omarchy has to offer.</p>
+<h2 id="yays">Yays</h2>
+<ol>
+<li>It puts my monkey brain that craves beautiful yet fast and useful UI at peace, it offers all the popular utilities such as Hyprland, Waybar, Nvim bundled with default config which is quite easy to change and replace to your liking. This could be the best place for beginners to start using Linux and customizing it as they spend more time with it.</li>
+<li>It has a heavy focus to provide an optimal development environment as it has options to install your favourite IDEs, languages nicely bundled together and the installing and removal of packages and tools are lightning fast.</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><img src="/assets/devel.png" alt="Languages"></th>
+          <th style="text-align: center"><img src="/assets/ide.png" alt="IDEs"></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<ol start="3">
+<li>DHH is quite active in the community it is constantly maintained and updates are rolled out quite regularly which is always a good sign.</li>
+</ol>
+<h2 id="nays">Nays</h2>
+<ol>
+<li>I really want the omarchy launcher to have multi level fuzzy finding instead of going through each menu one by one. For e.g. for shutting down you go through System &gt; Shutdown instead of just typing it and getting it. You are only allowed to search in the current level of menu as of now.</li>
+<li>I would really love for this whole process of installing it on a partition to be provided out of the box, I have no clue how hard it would be, but would make it much more pleasant for people to install and try it on their system instead of wiping their OS and start from this.</li>
+</ol>
+<p>This project is still quite young and exciting so there is a whole lot of potential. I believe as other popular OS keep on being intrusive and limiting the user, Linux could be the next big solution where every user knows how their OS operates and has full control instead of being spoon fed limited garbage by the big corps.</p>
+<h1 id="bonus-stuff">Bonus stuff</h1>
+<ol>
+<li>The time would be wrong even if you have set the correct timezone as Arch displays the RTC (hardware clock time) and you want it to set it to UTC.</li>
+</ol>
+<pre tabindex="0"><code>sudo timedatectl set-ntp true
+sudo hwclock --systohc
+</code></pre><ol start="2">
+<li>Create a snapshot of your arch setup before running the install script using a tool like <code>timeshift</code> instead of repeating the process a bunch of times when install script fails like me :)</li>
+</ol>
+<h1 id="resouces">Resouces</h1>
+<ol>
+<li>Youtube video to follow along until bootloader: 
+<a href="https://www.youtube.com/watch?v=kXqk91R4RwU" target="_blank" rel="noopener">Arch Linux: An Encrypted Guide</a>
+</li>
+<li>
+<a href="https://wiki.archlinux.org/title/Limine" target="_blank" rel="noopener">Limine Arch Wiki</a>
+</li>
+<li>And ofcourse ChatGPT!</li>
+</ol>
+
+    </article>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.postContent pre').forEach(function(pre) {
+        var code = pre.querySelector('code');
+        var lang = '';
+        if (code && code.className) {
+            var match = code.className.match(/language-(\w+)/);
+            if (match) lang = match[1];
+        }
+        
+        var header = document.createElement('div');
+        header.className = 'code-header';
+        header.innerHTML = 
+            '<div class="terminal-dots"><span></span><span></span><span></span></div>' +
+            '<span class="code-lang">' + lang + '</span>' +
+            '<button class="copy-btn">Copy</button>';
+        
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-wrapper';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(header);
+        wrapper.appendChild(pre);
+    });
+
+    document.querySelectorAll('.copy-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var code = this.closest('.code-wrapper').querySelector('code');
+            var text = code.textContent || code.innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    });
+});
+</script>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    <div class="footer-terminal">
+        <a href="/"><span class="prompt">$</span> cd ~</a>
+        <a href="/posts/"><span class="prompt">$</span> cd /posts</a>
+        <a href="/about/"><span class="prompt">$</span> cd /about</a>
+    </div>
+    <div class="footer-copyright">
+        © 2026 Sharat Nair
+    </div>
+</footer>
+
+    </div>
+
+</body>
+
+</html>

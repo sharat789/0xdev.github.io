@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>0x Dev Blog</title>
+    <link>https://0xdeveloper.netlify.app/</link>
+    <description></description>
+    <language>en-us</language>
+    <managingEditor>sharat.nair157@gmail.com (Sharat Nair)</managingEditor>
+    <lastBuildDate>Mon, 06 Apr 2026 14:10:44 +0000</lastBuildDate>
+    <atom:link href="https://0xdeveloper.netlify.app/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Omarchy (Dual Boot) Experience</title>
+      <link>https://0xdeveloper.netlify.app/posts/omarchy-experience/</link>
+      <pubDate>Sun, 26 Oct 2025 00:10:05 +0300</pubDate>
+      <guid>https://0xdeveloper.netlify.app/posts/omarchy-experience/</guid>
+      <description>&lt;h1 id=&#34;history&#34;&gt;History&lt;/h1&gt;
+&lt;p&gt;Linux always felt daunting as a teenager since at the surface it looked like something only tech professionals could handle. But this changed quite a bit over the years as more people wanted to transition to an OS that doesn&amp;rsquo;t throw bloatware at you which obviously made your system slower and offered quite limited possibility to customize how the OS looked and felt like. But I needed to buy a laptop and my YouTube algorithm generously recommended videos about owning an old ThinkPad and using Linux to get the most juice out of the system. So I caved and bought a used ThinkPad T440S for 75 euros. This was the start of the my Linux journey.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://0xdeveloper.netlify.app/posts/hello-world/</link>
+      <pubDate>Wed, 27 Aug 2025 08:24:31 +0200</pubDate>
+      <guid>https://0xdeveloper.netlify.app/posts/hello-world/</guid>
+      <description>&lt;h2 id=&#34;how-i-got-here&#34;&gt;How I Got Here&lt;/h2&gt;
+&lt;p&gt;I got into the micro-blogging space 2 years ago when I first started my job as a Frontend Platform Engineer. It all began when I noticed my colleague casually browsing 
+&lt;a href=&#34;https://news.ycombinator.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hacker News&lt;/a&gt;
+ while sipping his morning coffee—which quickly became my ritual too.&lt;/p&gt;
+&lt;p&gt;I was impressed by how everyday developers had their own blog websites where they shared knowledge and experience with the world, often with a tinge of humor and sarcasm that made technical content a very nice addition to your daily monotonous task of asking people to rebase their PR when shit doesn&amp;rsquo;t work.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
