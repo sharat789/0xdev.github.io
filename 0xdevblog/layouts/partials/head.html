@@ -24,6 +24,10 @@
   <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" >
 {{- end -}}
 
+{{ with .OutputFormats.Get "RSS" }}
+<link rel="alternate" type="application/rss+xml" title="{{ $.Title }}" href="{{ .Permalink | absURL }}" />
+{{ end }}
+
 {{ $vars := dict
   "color" (or site.Params.styles.color "blue")
 }}

@@ -4,6 +4,16 @@ title = '0x Dev Blog'
 
 theme = "nightfall"
 
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+
 [[menu.header]]
 name = "posts"
 weight = 0
