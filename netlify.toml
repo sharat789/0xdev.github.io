@@ -1,6 +1,5 @@
 # Netlify build config. Takes precedence over the Netlify dashboard settings.
 [build]
-  base = "0xdevblog"
   publish = "public"
   command = "hugo --gc --minify"
 

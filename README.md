@@ -1,12 +1,12 @@
 # 0x Dev Blog
 
-Hugo site in `0xdevblog/`. Netlify builds and deploys every push to `main` (config: `netlify.toml`).
+Hugo site. Netlify builds and deploys every push to `main` (config: `netlify.toml`).
 The only tool you need locally is [Hugo extended](https://gohugo.io/installation/). No Node or Sass is required.
+Run all commands from the repo root.
 
 ## Write a post
 
 ```sh
-cd 0xdevblog
 hugo new content posts/my-post.md   # creates a draft from archetypes/default.md
 hugo server -D                      # preview at http://localhost:1313 (drafts included)
 ```
