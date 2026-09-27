@@ -1,0 +1,17 @@
+# Netlify build config. Takes precedence over the Netlify dashboard settings.
+[build]
+  base = "0xdevblog"
+  publish = "public"
+  command = "hugo --gc --minify"
+
+[build.environment]
+  # Keep in sync with the local version (`hugo version`).
+  HUGO_VERSION = "0.165.0"
+  HUGO_ENV = "production"
+
+# Deploy previews / branch deploys use their own URL instead of the production baseURL.
+[context.deploy-preview]
+  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
